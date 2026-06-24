@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"When Will You Settle Down?" — The Pressure Faced by Career-Driven Women</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --blush:       #f7d6cb;
+      --blush-light: #fdf0eb;
+      --teal:        #7ec8c8;
+      --teal-dark:   #5aabab;
+      --charcoal:    #3d3535;
+      --mid:         #6b5b5b;
+      --white:       #ffffff;
+      --section-bg:  #fdf8f6;
+      --leaf-green:  #8fc4b7;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--blush);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--mid); letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      color: var(--mid); letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal-dark); }
+
+    /* ── HERO ── */
+	.hero {
+		min-height: auto;
+		background: var(--white);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 110px 30px 70px;
+		position: relative;
+		overflow: hidden;
+	}
+
+    /* Decorative SVG leaves — top-right corner */
+    .hero::before {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 380px; height: 380px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cellipse cx='180' cy='80' rx='60' ry='30' fill='%237ec8c8' opacity='.35' transform='rotate(-30 180 80)'/%3E%3Cellipse cx='220' cy='140' rx='50' ry='22' fill='%237ec8c8' opacity='.28' transform='rotate(20 220 140)'/%3E%3Cellipse cx='150' cy='50' rx='45' ry='18' fill='%23f7d6cb' opacity='.45' transform='rotate(-50 150 50)'/%3E%3Cellipse cx='260' cy='200' rx='55' ry='24' fill='%237ec8c8' opacity='.22' transform='rotate(10 260 200)'/%3E%3C/svg%3E") no-repeat center/contain;
+      pointer-events: none;
+    }
+    /* Bottom-left corner leaves */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -20px; left: -30px;
+      width: 320px; height: 320px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cellipse cx='80' cy='200' rx='55' ry='24' fill='%237ec8c8' opacity='.35' transform='rotate(40 80 200)'/%3E%3Cellipse cx='50' cy='150' rx='45' ry='20' fill='%23f7d6cb' opacity='.4' transform='rotate(-20 50 150)'/%3E%3Cellipse cx='120' cy='260' rx='50' ry='22' fill='%237ec8c8' opacity='.25' transform='rotate(60 120 260)'/%3E%3C/svg%3E") no-repeat center/contain;
+      pointer-events: none;
+    }
+
+    .hero-text { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; text-align: center; }
+    .hero-eyebrow {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--teal-dark);
+      margin-bottom: 6px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+    .hero-title em {
+      font-style: italic; color: var(--teal-dark);
+    }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--mid); margin-bottom: 10px;
+    }
+    .hero-pill {
+      display: inline-block;
+      background: var(--blush); color: var(--mid);
+      font-size: 0.8rem; font-weight: 500;
+      padding: 6px 18px; border-radius: 999px;
+      letter-spacing: 0.03em;
+    }
+    .hero-meta {
+		margin-top: 14px;
+		display: flex;
+		justify-content: center;
+		gap: 24px;
+		flex-wrap: wrap;
+	}
+    .hero-meta-item { font-size: 0.82rem; color: var(--mid); }
+    .hero-meta-item strong { display: block; color: var(--charcoal); font-size: 0.9rem; }
+
+    /* Illustration placeholder */
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    .hero-img-wrap {
+      width: 380px; height: 420px;
+      background: linear-gradient(135deg, var(--blush-light) 0%, var(--blush) 100%);
+      border-radius: 200px 200px 180px 180px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px;
+      position: relative; overflow: hidden;
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: inherit;
+    }
+    .img-placeholder-label {
+      font-size: 0.78rem; color: var(--mid); text-align: center;
+      line-height: 1.4; padding: 16px;
+    }
+    .img-placeholder-icon { font-size: 2.5rem; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 72px; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal-dark);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700; color: var(--charcoal);
+      margin-bottom: 24px; line-height: 1.2;
+    }
+    .section-body { font-size: 1rem; color: var(--mid); max-width: 680px; }
+    .section-body p + p { margin-top: 16px; }
+
+    /* Pill highlight on section titles */
+    .pill-bg {
+      display: inline; background: var(--blush);
+      padding: 2px 14px; border-radius: 999px;
+    }
+
+    /* ── INTRO ── */
+    #intro { background: var(--section-bg); }
+    .intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: start;
+    }
+    .bullet-list { list-style: none; margin-top: 20px; }
+    .bullet-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 0; border-bottom: 1px solid var(--blush);
+      font-size: 0.95rem; color: var(--mid);
+    }
+    .bullet-list li:last-child { border-bottom: none; }
+    .bullet-dot {
+      flex-shrink: 0; width: 10px; height: 10px;
+      border-radius: 50%; background: var(--teal);
+      margin-top: 6px;
+    }
+
+    /* ── STORY FOCUS ── */
+    #story { background: var(--white); }
+    .story-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center;
+    }
+    .story-quote-block {
+      background: var(--blush-light);
+      border-left: 4px solid var(--blush);
+      padding: 28px 32px; border-radius: 0 12px 12px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1.15rem; color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .story-focus-card {
+      background: var(--section-bg);
+      border-radius: 16px; padding: 28px;
+      font-size: 0.95rem; color: var(--mid);
+    }
+    .story-focus-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin-bottom: 10px; color: var(--charcoal);
+    }
+
+    /* ── SUBJECT ── */
+    #subject { background: var(--blush-light); }
+    .subject-card {
+      display: grid; grid-template-columns: 260px 1fr; gap: 48px;
+      align-items: start;
+    }
+    .subject-photo {
+      width: 260px; height: 300px;
+      background: linear-gradient(135deg, #f0e0d8 0%, var(--blush) 100%);
+      border-radius: 130px 130px 110px 110px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+    }
+    .subject-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+    .subject-info { padding-top: 8px; }
+    .subject-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700; color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+    .subject-title-tag {
+      display: inline-block; background: var(--blush);
+      color: var(--mid); font-size: 0.8rem; font-weight: 500;
+      padding: 4px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .subject-creds { list-style: none; }
+    .subject-creds li {
+      font-size: 0.9rem; color: var(--mid);
+      padding: 8px 0; border-bottom: 1px solid rgba(247,214,203,0.6);
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .subject-creds li:last-child { border-bottom: none; }
+    .cred-icon { color: var(--teal); font-size: 1rem; flex-shrink: 0; }
+    .subject-desc { margin-top: 20px; font-size: 0.95rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── WHY IT MATTERS ── */
+    #why { background: var(--white); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      margin-top: 40px;
+    }
+    .why-card {
+      background: var(--section-bg);
+      border-radius: 16px; padding: 28px 24px;
+      border-top: 3px solid var(--blush);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(247,214,203,0.4); }
+    .why-card-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .why-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; margin-bottom: 10px; color: var(--charcoal);
+    }
+    .why-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.65; }
+
+    /* ── INTERVIEW PLAYER ── */
+    #interview { background: var(--section-bg); }
+    .interview-intro {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1.05rem;
+      color: var(--mid); margin-bottom: 40px; max-width: 600px;
+    }
+
+    /* Master controls bar */
+    .player-controls {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--charcoal); border-radius: 14px;
+      padding: 18px 28px; margin-bottom: 36px;
+    }
+    .btn-play-all {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--teal); color: white;
+      border: none; border-radius: 999px;
+      padding: 10px 24px; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: background 0.2s, transform 0.1s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-play-all:hover { background: var(--teal-dark); transform: scale(1.03); }
+    .btn-play-all:active { transform: scale(0.98); }
+    .btn-reset {
+      background: transparent; border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7); border-radius: 999px;
+      padding: 8px 18px; font-size: 0.82rem; cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-reset:hover { border-color: var(--blush); color: var(--blush); }
+    .player-status {
+      flex: 1; font-size: 0.82rem; color: rgba(255,255,255,0.55);
+      font-style: italic; text-align: right;
+    }
+
+    /* Progress dots */
+    .progress-dots {
+      display: flex; gap: 8px; align-items: center;
+      margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .progress-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blush); color: var(--mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 600;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+    .progress-dot.active { background: var(--teal); color: white; transform: scale(1.15); }
+    .progress-dot.done { background: var(--teal-dark); color: white; opacity: 0.6; }
+    .progress-line {
+      flex: 1; height: 2px; background: var(--blush);
+      border-radius: 1px; min-width: 20px;
+    }
+
+    /* Individual Q&A cards */
+    .qa-list { display: flex; flex-direction: column; gap: 20px; }
+    .qa-item {
+      background: var(--white);
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(247,214,203,0.25);
+      border: 2px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .qa-item.active-q {
+      border-color: var(--teal);
+      box-shadow: 0 4px 24px rgba(126,200,200,0.25);
+    }
+    .qa-item.active-a {
+      border-color: var(--blush);
+      box-shadow: 0 4px 24px rgba(247,214,203,0.5);
+    }
+    .qa-item.done-item { opacity: 0.65; }
+
+    /* Question row */
+    .qa-question {
+      background: var(--blush);
+      padding: 16px 24px;
+      font-weight: 600; font-size: 0.95rem; color: var(--charcoal);
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: background 0.3s;
+    }
+    .qa-item.active-q .qa-question { background: var(--teal); color: white; }
+    .qa-num {
+      flex-shrink: 0;
+      background: rgba(0,0,0,0.12); color: currentColor;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; margin-top: 1px;
+    }
+    .qa-q-text { flex: 1; }
+    .interviewer-tag {
+      font-size: 0.72rem; font-weight: 500; margin-top: 4px;
+      opacity: 0.7; letter-spacing: 0.04em;
+    }
+
+    /* Audio status badge inside question */
+    .audio-badge {
+      flex-shrink: 0; display: flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; font-weight: 600; padding: 4px 12px;
+      border-radius: 999px; background: rgba(0,0,0,0.1);
+      opacity: 0; transition: opacity 0.3s;
+      align-self: center; white-space: nowrap;
+    }
+    .qa-item.active-q .audio-badge,
+    .qa-item.active-a .audio-badge { opacity: 1; }
+    .audio-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: currentColor; animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    /* Answer row */
+    .qa-answer {
+      padding: 18px 24px;
+      font-size: 0.93rem; color: var(--mid); line-height: 1.7;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .answer-audio-bar {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--blush-light); border-radius: 10px;
+      padding: 10px 16px;
+      transition: background 0.3s;
+    }
+    .qa-item.active-a .answer-audio-bar { background: var(--blush); }
+    .answer-speaker-icon { font-size: 1.2rem; }
+    .answer-label {
+      font-size: 0.8rem; font-weight: 600; color: var(--charcoal);
+    }
+    .answer-sublabel {
+      font-size: 0.72rem; color: var(--mid); font-style: italic;
+    }
+    .placeholder-note {
+      font-style: italic; color: #bba9a9; font-size: 0.83rem;
+    }
+
+    /* Waveform animation */
+    .waveform {
+      display: flex; align-items: center; gap: 3px; height: 20px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .waveform.playing { opacity: 1; }
+    .waveform span {
+      width: 3px; border-radius: 2px; background: var(--teal-dark);
+      animation: wave 0.8s ease-in-out infinite;
+    }
+    .waveform span:nth-child(1) { height: 6px; animation-delay: 0s; }
+    .waveform span:nth-child(2) { height: 14px; animation-delay: 0.1s; }
+    .waveform span:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+    .waveform span:nth-child(4) { height: 18px; animation-delay: 0.15s; }
+    .waveform span:nth-child(5) { height: 8px; animation-delay: 0.05s; }
+    .waveform span:nth-child(6) { height: 14px; animation-delay: 0.25s; }
+    @keyframes wave {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.3); }
+    }
+
+/* ── MULTIMEDIA ── */
+    #multimedia { background: var(--white); }
+    .media-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 36px;
+    }
+    .media-card {
+	  border-radius: 14px; overflow: hidden;
+      border: 2px dashed var(--blush);
+      background: var(--blush-light);
+    }
+    .media-thumb {
+	  background: linear-gradient(135deg, var(--blush-light) 0%, var(--blush) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+    }
+	.fixed-size {
+	width: 436px !important;
+	height: 430px !important;
+	}
+    .media-thumb-icon { font-size: 2.4rem; }
+    .media-thumb-label { font-size: 0.75rem; color: var(--mid); }
+    .media-meta { padding: 6px 12px; }
+    .media-meta h5 { font-size: 0.88rem; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+    .media-meta p { font-size: 0.78rem; color: var(--mid); font-style: italic; }
+
+    /* ── CONCLUSION ── */
+    #conclusion {
+      background: linear-gradient(135deg, var(--blush-light) 0%, #f0eded 100%);
+      text-align: center; padding: 100px 72px;
+      position: relative; overflow: hidden;
+    }
+    #conclusion::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 340px; height: 340px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cellipse cx='180' cy='80' rx='60' ry='30' fill='%237ec8c8' opacity='.2' transform='rotate(-30 180 80)'/%3E%3Cellipse cx='220' cy='160' rx='50' ry='22' fill='%237ec8c8' opacity='.15' transform='rotate(20 220 160)'/%3E%3C/svg%3E") no-repeat center/contain;
+      pointer-events: none;
+    }
+    .conclusion-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic; color: var(--charcoal);
+      max-width: 700px; margin: 0 auto 24px;
+      line-height: 1.4;
+    }
+    .conclusion-sub {
+      font-size: 0.9rem; color: var(--mid); max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── CREDITS ── */
+    #credits { background: var(--charcoal); color: var(--blush-light); padding: 60px 72px; }
+    .credits-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+    .credits-col h4 {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .credits-col p, .credits-col li {
+      font-size: 0.85rem; color: #c9b8b8; line-height: 1.9;
+    }
+    .credits-col ul { list-style: none; }
+    .credits-bottom {
+      margin-top: 40px; padding-top: 24px;
+      border-top: 1px solid rgba(247,214,203,0.15);
+      font-size: 0.78rem; color: #8a7777; text-align: center;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 14px 24px; }
+      .nav-links { gap: 16px; }
+      section { padding: 60px 24px; }
+      .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 40px; }
+      .hero-visual { order: -1; }
+      .hero-img-wrap { width: 260px; height: 280px; }
+      .intro-grid, .story-grid, .subject-card { grid-template-columns: 1fr; gap: 32px; }
+      .subject-photo { width: 200px; height: 240px; }
+      .why-grid, .media-grid { grid-template-columns: 1fr; }
+      .credits-grid { grid-template-columns: 1fr; gap: 28px; }
+      #conclusion { padding: 60px 24px; }
+      #credits { padding: 50px 24px; }
+    }
+	
+	/* ── FADE TRANSITION FOR AUDIO/VIDEO ── */
+	.fade-media {
+	opacity: 0;
+	transition: opacity 0.8s ease;
+	}
+	.fade-media.playing {
+	opacity: 1;
+	}
+	
+/* ── TRANSCRIPT REVEAL ── */
+.transcript {
+  display: none;
+  margin-top: 10px;
+  padding: 14px 18px;
+  background: var(--blush-light);
+  border-left: 4px solid var(--teal);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+.transcript.show {
+  display: block;
+}
+
+.reveal-btn {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  cursor: pointer;
+  user-select: none;
+}	
+.answer-video {
+  width: 100%;
+  max-width: 600px;
+
+  height: 340px;               
+  background: #000;
+
+  border: 3px solid var(--blush-light);
+  border-radius: 12px;
+
+   opacity: 0;
+  pointer-events: none;
+
+  object-fit: contain; 
+  transition: opacity 0.3s ease;
+}
+
+.answer-video.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <span class="nav-logo">Gender &amp; Society · Group 4</span>
+  <ul class="nav-links">
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#subject">Subject</a></li>
+    <li><a href="#why">Why It Matters</a></li>
+    <li><a href="#interview">Interview</a></li>
+    <li><a href="#multimedia">Multimedia</a></li>
+    <li><a href="#credits">Credits</a></li>
+  </ul>
+</nav>
+
+<!-- ── TITLE ── -->
+<header class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Feature Story</p>
+    <h1 class="hero-title">
+      <em>"When Will You<br>Settle Down?"</em>
+    </h1>
+    <p class="hero-subtitle">The Pressure Faced by Career-Driven Women</p>
+    <span class="hero-pill">Gender Expectations · Filipino Society · Women's Rights</span>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <strong>Group 4</strong>
+        S2102
+      </div>
+      <div class="hero-meta-item">
+        <strong>Course</strong>
+        Gender and Society
+      </div>
+     </div>
+  </div>
+
+  
+</header>
+
+<!-- ── INTRODUCTION ── -->
+<section id="intro">
+  <div class="intro-grid">
+    <div>
+      <p class="section-label">Introduction</p>
+      <h2 class="section-title">Success is not enough or so they say.</h2>
+      <div class="section-body">
+        <p>
+          Across Filipino households, boardrooms, and family reunions, a question quietly follows
+          career-driven women no matter how far they climb: <em>"Kailan ka mag aasawa?"</em> —
+          "When will you settle down?"
+        </p>
+        <p>
+          This story explores how women who have built successful, independent careers are still
+          measured by a different yardstick one shaped not by achievement, but by marital status.
+        </p>
+      </div>
+    </div>
+    <div>
+      <ul class="bullet-list">
+        <li>
+          <span class="bullet-dot"></span>
+          Women with successful careers still face pressure to marry
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          Society continues to prioritize marriage over professional growth
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          Family and relatives question women's life choices
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          Expectations carry emotional, mental, and social consequences
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          Women persist in defining success on their own terms
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAIN STORY / FOCUS ── -->
+<section id="story">
+  <p class="section-label">The Story</p>
+  <h2 class="section-title">Focus &amp; Narrative</h2>
+
+  <div class="story-grid">
+    <div>
+      <div class="story-quote-block">
+        "Even successful women are still judged for being unmarried as if a career, a degree,
+        and a lifetime of hard work can be made invisible by the absence of a ring."
+      </div>
+      
+      <div style="margin-top:32px;" class="section-body">
+        <p>
+          This feature centers on how Filipino society through family pressure, cultural norms,
+          and traditional gender roles continues to define a woman's worth by her relationship
+          status rather than her contributions, skills, or independence.
+        </p>
+        <p style="margin-top:14px;">
+          As more Filipino women pursue higher education and financial independence, the tension
+          between personal ambition and social expectation has never been more visible or more
+          in need of honest conversation.
+        </p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="story-focus-card">
+        <h4>🎯 Story Focus</h4>
+        <p>How society expects career-driven women to prioritize marriage over professional growth and the emotional cost of that expectation.</p>
+      </div>
+      <div class="story-focus-card">
+        <h4>📌 Relevance to Gender &amp; Society</h4>
+        <p>Reflects traditional gender roles still present in Philippine society. Shows inequality in expectations between men and women. Highlights how cultural norms shape personal decisions.</p>
+      </div>
+      <div class="story-focus-card">
+        <h4>💡 What Makes It Surprising</h4>
+        <p>Even financially stable and professionally accomplished women are still seen as "incomplete" in society's eyes if they remain unmarried.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUBJECT ── -->
+<section id="subject">
+  <p class="section-label">Interview Subject</p>
+  <h2 class="section-title">Career-Driven Woman</h2>
+
+  <div class="subject-card">
+    <div>
+      <div class="subject-photo">
+		<img src="image/judelyn.jpg">
+		</div>
+    </div>
+
+    <div class="subject-info">
+      <h3 class="subject-name">Mam Judelyn Maragañas Botin, LPT</h3>
+      <span class="subject-title-tag">Career-Oriented Working Professional</span>
+
+      <ul class="subject-creds">
+        <li><span class="cred-icon">🏫</span> DepEd Teacher</li>
+        <li><span class="cred-icon">🎓</span> Master of Arts in Guidance and Counselling</li>
+        <li><span class="cred-icon">📜</span> Bachelor of Science in Education, <em>Cum Laude</em></li>
+        <li><span class="cred-icon">✏️</span> Licensed Professional Teacher (LPT)</li>
+      </ul>
+
+      <p class="subject-desc">
+        Mam Judelyn is the best person to tell this story because she personally experiences the
+        pressure many Filipino women face regarding marriage and settling down. Despite being
+        professionally successful and independent, she continues to receive questions and
+        expectations about her personal life making her voice both authentic and necessary.
+      </p>
+
+      <blockquote style="margin-top:20px;font-style:italic;color:var(--mid);font-size:0.92rem;border-left:3px solid var(--blush);padding-left:16px;">
+        "Sharing her experience with societal pressure."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY IT MATTERS ── -->
+<section id="why">
+  <p class="section-label">Newsworthiness</p>
+  <h2 class="section-title">Why This Story Matters</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card-icon">💬</div>
+      <h4>Why It Matters Now</h4>
+      <p>Many women still face pressure despite their success. Traditional beliefs continue to influence how society views women — especially as more Filipinas pursue careers and higher education.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-icon">❤️</div>
+      <h4>Why We Care</h4>
+      <p>Women should be respected not only for their relationship status but for their skills, hard work, and contributions to society. Women deserve the freedom to choose their own timeline in life.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-icon">🌍</div>
+      <h4>Why Others Will Care</h4>
+      <p>Many people — especially women and young professionals — can relate to balancing career ambitions with family expectations. Families may also better understand the emotional impact of these pressures.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-icon">📚</div>
+      <h4>What People Will Learn</h4>
+      <p>How societal pressure and traditional gender roles affect career-driven women emotionally, mentally, and socially — and why respecting women's personal decisions matters.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-icon">⏰</div>
+      <h4>Why Tell It Right Now</h4>
+      <p>As more Filipino women pursue higher education and financial independence, conversations about gender expectations and women's life choices are becoming increasingly relevant today.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-icon">🎯</div>
+      <h4>Story Purpose</h4>
+      <p>To show the effects of societal expectations on women, highlight emotional and social pressures, and promote respect for women's personal choices and life decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTERVIEW ── -->
+<section id="interview">
+  <p class="section-label">Interview</p>
+  <h2 class="section-title">In Her Own Words</h2>
+  <p class="interview-intro">
+    Interviewer <b>Phoebe Grace Bautista</b> asks Five Questions.<br />Press <strong>Play Interview</strong> to begin.
+  </p>
+
+  <!-- Master controls -->
+  <div class="player-controls">
+    <button class="btn-play-all" id="btnPlayAll" onclick="startInterview()">
+      ▶ Play Interview
+    </button>
+    <button class="btn-reset" onclick="resetInterview()">↺ Reset</button>
+    <span class="player-status" id="playerStatus">Ready — press Play to begin</span>
+  </div>
+
+  <!-- Progress indicator -->
+  <div class="progress-dots" id="progressDots">
+    <div class="progress-dot" id="dot-1">Q1</div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" id="dot-2">Q2</div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" id="dot-3">Q3</div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" id="dot-4">Q4</div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" id="dot-5">Q5</div>
+  </div>
+
+  <!-- Question audio files (Phoebe asking) -->
+  <audio id="q1-audio" src="audio/Q1.mp4" preload="auto"></audio>
+  <audio id="q2-audio" src="audio/Q2.mp4" preload="auto"></audio>
+  <audio id="q3-audio" src="audio/Q3.mp4" preload="auto"></audio>
+  <audio id="q4-audio" src="audio/Q4.mp4" preload="auto"></audio>
+  <audio id="q5-audio" src="audio/Q5.mp4" preload="auto"></audio>
+  <!-- Q&A Cards -->
+  <div class="qa-list">
+
+    <!-- Q1 -->
+    <div class="qa-item" id="qa-1">
+      <div class="qa-question">
+        <span class="qa-num">1</span>
+        <div class="qa-q-text">
+          People often ask you when you will settle down. How do you respond to that pressure?
+          <p class="interviewer-tag">🎙️ Interviewer: Phoebe Grace Bautista</p>
+        </div>
+        <div class="audio-badge" id="badge-1">
+          <span class="dot"></span>
+          <span id="badge-label-1">Playing question…</span>
+        </div>
+      </div>
+      <div class="qa-answer">
+        <div class="answer-audio-bar">
+          <span class="answer-speaker-icon">🎤</span>
+          <div>
+            <div class="answer-label">Mam Judelyn's Answer</div>
+            <div class="answer-sublabel" id="a1-sublabel">Plays after the question audio</div>
+          </div>
+          <div class="waveform" id="wave-a1">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+		<video id="a1-audio" class="answer-video" src="video/A1.mp4" preload="auto"></video>
+        <div class="transcript" id="t1">I don't usually take that kind of question personally. Instead of seeing it as a pressure, I see it as an opportunity to let people understand that each of us has our own timeline and journey in life. Whenever someone asks me about settling down, I simply tell them, honestly, that I'm not ready yet. Right now, I have goals to pursue, dreams to fulfill, and priorities that I want to focus on. Life is not a race. I believe that we all bloom in our own season. If the time comes when I decide to settle down, and it's truly meant for me, I will wholeheartedly welcome and embrace that chapter of my life. Until then, I choose to trust my journey, appreciate where I am, and move forward at the pace that feels right for me.
+	</div>
+	<div class="reveal-btn" onclick="toggleTranscript(1, this)">Show Transcript ▼</div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-item" id="qa-2">
+      <div class="qa-question">
+        <span class="qa-num">2</span>
+        <div class="qa-q-text">
+          How do you balance your career goals with your family's expectations about settling down?
+          <p class="interviewer-tag">🎙️ Interviewer: Phoebe Grace Bautista</p>
+        </div>
+        <div class="audio-badge" id="badge-2">
+          <span class="dot"></span>
+          <span id="badge-label-2">Playing question…</span>
+        </div>
+      </div>
+      <div class="qa-answer">
+        <div class="answer-audio-bar">
+          <span class="answer-speaker-icon">🎤</span>
+          <div>
+            <div class="answer-label">Mam Judelyn's Answer</div>
+            <div class="answer-sublabel" id="a2-sublabel">Plays after the question audio</div>
+          </div>
+          <div class="waveform" id="wave-a2">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+		<video id="a2-audio" class="answer-video" src="video/A2.mp4" preload="auto"></video>
+        <div class="transcript" id="t2">My family has always been so supportive of me while they naturally look forward to the day that I might have a family of my own. They have never placed undue pressure on me or made me feel rushed to reach that stage of life. I consider myself fortunate because they respect my individuality, my choices, and the path I have chosen for myself. They trust that I know what is best for my life and that I will make decisions at my own pace. Their respect and unwavering support are so genuine that I rarely feel the need to explain myself — they simply accept and believe in me. For that, I am deeply grateful, knowing that my family stands behind me regardless of my timeline. Their support gives me the confidence to pursue my goals and embrace life as it unfolds.
+		</div>
+	<div class="reveal-btn" onclick="toggleTranscript(2, this)">Show Transcript ▼</div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-item" id="qa-3">
+      <div class="qa-question">
+        <span class="qa-num">3</span>
+        <div class="qa-q-text">
+          What does success mean to you personally?
+          <p class="interviewer-tag">🎙️ Interviewer: Phoebe Grace Bautista</p>
+        </div>
+        <div class="audio-badge" id="badge-3">
+          <span class="dot"></span>
+          <span id="badge-label-3">Playing question…</span>
+        </div>
+      </div>
+      <div class="qa-answer">
+        <div class="answer-audio-bar">
+          <span class="answer-speaker-icon">🎤</span>
+          <div>
+            <div class="answer-label">Mam Judelyn's Answer</div>
+            <div class="answer-sublabel" id="a3-sublabel">Plays after the question audio</div>
+          </div>
+          <div class="waveform" id="wave-a3">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+		  <video id="a3-audio" class="answer-video" src="video/A3.mp4" preload="auto"></video>
+          <div class="transcript" id="t3">I have a very simple definition of success. For me, success is having the courage to stop seeking validation from others and instead live life on my own terms. It means not feeling the need to prove anything to anyone. It means being guided by my values, purpose, and personal growth rather than by other people's expectations. Success is not measured by how much applause we receive, but by how aligned we are with the life we truly want to live. In our pursuit of success and excellence, we often become so focused on achieving more that we forget to appreciate the life we are living. We chase milestones, deadlines, and accomplishments, believing that happiness awaits us at the finish line. But life is happening now — in the quiet moments, in the lessons learned, in the people we love, and in the person we are becoming along the way. At the end of the day, true success is not just about reaching our goals. It is about living fully, growing continuously, and finding peace in becoming authentically ourselves.
+		</div>
+		<div class="reveal-btn" onclick="toggleTranscript(3, this)">Show Transcript ▼</div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qa-item" id="qa-4">
+      <div class="qa-question">
+        <span class="qa-num">4</span>
+        <div class="qa-q-text">
+          Have societal expectations ever affected your confidence or decisions?
+          <p class="interviewer-tag">🎙️ Interviewer: Phoebe Grace Bautista</p>
+        </div>
+        <div class="audio-badge" id="badge-4">
+          <span class="dot"></span>
+          <span id="badge-label-4">Playing question…</span>
+        </div>
+      </div>
+      <div class="qa-answer">
+        <div class="answer-audio-bar">
+          <span class="answer-speaker-icon">🎤</span>
+          <div>
+            <div class="answer-label">Mam Judelyn's Answer</div>
+            <div class="answer-sublabel" id="a4-sublabel">Plays after the question audio</div>
+          </div>
+          <div class="waveform" id="wave-a4">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+		<video id="a4-audio" class="answer-video" src="video/A4.mp4" preload="auto"></video>
+        <div class="transcript" id="t4">It does have an effect, since I do consider various factors when making decisions. However, I make sure to filter these factors and focus on those that truly matter. In the end, they don't weaken my confidence, as long as I am clear about what I want and where I want to go in life. I remain grounded in my decisions and trust myself to move forward with certainty and purpose.
+		</div>
+		<div class="reveal-btn" onclick="toggleTranscript(4, this)">Show Transcript ▼</div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="qa-item" id="qa-5">
+      <div class="qa-question">
+        <span class="qa-num">5</span>
+        <div class="qa-q-text">
+          What message would you give to women experiencing the same pressure?
+          <p class="interviewer-tag">🎙️ Interviewer: Phoebe Grace Bautista</p>
+        </div>
+        <div class="audio-badge" id="badge-5">
+          <span class="dot"></span>
+          <span id="badge-label-5">Playing question…</span>
+        </div>
+      </div>
+      <div class="qa-answer">
+        <div class="answer-audio-bar">
+          <span class="answer-speaker-icon">🎤</span>
+          <div>
+            <div class="answer-label">Mam Judelyn's Answer</div>
+            <div class="answer-sublabel" id="a5-sublabel">Plays after the question audio</div>
+          </div>
+          <div class="waveform" id="wave-a5">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+		<video id="a5-audio" class="answer-video" src="video/A5.mp4" preload="auto"></video>
+        <div class="transcript" id="t5">I have a very simple definition of success. For me, success is having the courage to stop seeking validation from others and instead live life on my own terms. It means not feeling the need to prove anything to anyone. It means being guided by my values, purpose, and personal growth rather than by other people's expectations. Success is not measured by how much applause we receive, but by how aligned we are with the life we truly want to live. In our pursuit of success and excellence, we often become so focused on achieving more that we forget to appreciate the life we are living. We chase milestones, deadlines, and accomplishments, believing that happiness awaits us at the finish line. But life is happening now — in the quiet moments, in the lessons learned, in the people we love, and in the person we are becoming along the way. At the end of the day, true success is not just about reaching our goals. It is about living fully, growing continuously, and finding peace in becoming authentically ourselves.
+		</div>
+	<div class="reveal-btn" onclick="toggleTranscript(5, this)">Show Transcript ▼</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// ── INTERVIEW AUTO-PLAY ENGINE ──
+// Sequence: Q1 → A1 → Q2 → A2 → Q3 → A3 → Q4 → A4 → Q5 → A5
+
+const TOTAL = 5;
+let currentStep = -1; // -1 = not started
+let isPlaying = false;
+
+// Build the flat sequence: [{type:'q'|'a', num:1..5}, ...]
+const sequence = [];
+for (let i = 1; i <= TOTAL; i++) {
+  sequence.push({ type: 'q', num: i });
+  sequence.push({ type: 'a', num: i });
+}
+
+function getAudio(type, num) {
+  return document.getElementById(`${type}${num}-audio`);
+}
+
+function setCardState(num, state) {
+  const card = document.getElementById(`qa-${num}`);
+  card.classList.remove('active-q', 'active-a', 'done-item');
+  if (state === 'active-q') card.classList.add('active-q');
+  if (state === 'active-a') card.classList.add('active-a');
+  if (state === 'done') card.classList.add('done-item');
+
+  const badge = document.getElementById(`badge-${num}`);
+  const badgeLabel = document.getElementById(`badge-label-${num}`);
+  const wave = document.getElementById(`wave-a${num}`);
+  const sublabel = document.getElementById(`a${num}-sublabel`);
+
+  if (state === 'active-q') {
+    badge.style.opacity = '1';
+    badgeLabel.textContent = '🎙️ Playing question…';
+    wave.classList.remove('playing');
+    sublabel.textContent = 'Coming up next…';
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // HIDE video during question
+    const vid = document.getElementById(`a${num}-audio`);
+    if (vid) vid.classList.remove('show');
+
+  } else if (state === 'active-a') {
+    badge.style.opacity = '1';
+    badgeLabel.textContent = '🎤 Playing answer…';
+    wave.classList.add('playing');
+    sublabel.textContent = '▶ Now playing…';
+
+    // SHOW video during answer
+    const vid = document.getElementById(`a${num}-audio`);
+    if (vid) vid.classList.add('show');
+
+  } else {
+    badge.style.opacity = '0';
+    wave.classList.remove('playing');
+
+    if (state === 'done') sublabel.textContent = '✓ Done';
+    else sublabel.textContent = 'Plays after the question audio';
+
+    // HIDE video when idle/done
+    const vid = document.getElementById(`a${num}-audio`);
+    if (vid) vid.classList.remove('show');
+  }
+}
+
+function setDot(num, state) {
+  const dot = document.getElementById(`dot-${num}`);
+  dot.classList.remove('active', 'done');
+  if (state === 'active') dot.classList.add('active');
+  if (state === 'done') dot.classList.add('done');
+}
+
+function updateStatus(text) {
+  document.getElementById('playerStatus').textContent = text;
+}
+
+function fadePlay(media) {
+  media.classList.add('fade-media');
+  media.currentTime = 0;
+  media.play();
+  requestAnimationFrame(() => media.classList.add('playing'));
+}
+
+function playStep(stepIndex) {
+  if (stepIndex >= sequence.length) {
+    // All done
+    finishInterview();
+    return;
+  }
+
+  currentStep = stepIndex;
+  const { type, num } = sequence[stepIndex];
+  const audio = getAudio(type, num);
+
+  if (type === 'q') {
+    // Mark previous card done
+    if (num > 1) { setCardState(num - 1, 'done'); setDot(num - 1, 'done'); }
+    setCardState(num, 'active-q');
+    setDot(num, 'active');
+    updateStatus(`Question ${num} of ${TOTAL} — Interviewer speaking…`);
+  } else {
+    setCardState(num, 'active-a');
+    updateStatus(`Answer ${num} of ${TOTAL} — Mam Judelyn speaking…`);
+  }
+
+  // Clone to remove stale listeners, preserve the id
+  const newAudio = audio.cloneNode(true);
+  newAudio.id = audio.id;
+  audio.parentNode.replaceChild(newAudio, audio);
+
+  newAudio.addEventListener('ended', () => playStep(stepIndex + 1), { once: true });
+  newAudio.addEventListener('error', () => setTimeout(() => playStep(stepIndex + 1), 800), { once: true });
+
+  fadePlay(newAudio);
+}
+
+function startInterview() {
+  if (isPlaying) return;
+  isPlaying = true;
+  resetVisuals();
+  document.getElementById('btnPlayAll').textContent = '⏸ Playing…';
+  document.getElementById('btnPlayAll').style.background = 'var(--mid)';
+  playStep(0);
+}
+
+function finishInterview() {
+  isPlaying = false;
+  for (let i = 1; i <= TOTAL; i++) { setCardState(i, 'done'); setDot(i, 'done'); }
+  updateStatus('✓ Interview complete');
+  document.getElementById('btnPlayAll').textContent = '✓ Done';
+  document.getElementById('btnPlayAll').style.background = 'var(--teal-dark)';
+}
+
+function resetInterview() {
+  // Stop all audio
+  for (let i = 1; i <= TOTAL; i++) {
+    ['q','a'].forEach(t => { const a = getAudio(t, i); a.pause(); a.currentTime = 0; });
+  }
+  isPlaying = false;
+  currentStep = -1;
+  resetVisuals();
+  updateStatus('Ready — press Play to begin');
+  const btn = document.getElementById('btnPlayAll');
+  btn.textContent = '▶ Play Interview';
+  btn.style.background = 'var(--teal)';
+}
+
+function resetVisuals() {
+  for (let i = 1; i <= TOTAL; i++) {
+    setCardState(i, 'idle');
+    setDot(i, null);
+    document.getElementById(`a${i}-sublabel`).textContent = 'Plays after the question audio';
+  }
+}
+
+//Transcript Display
+function toggleTranscript(num, el) {
+  const t = document.getElementById(`t${num}`);
+  if (t.classList.contains('show')) {
+    t.classList.remove('show');
+    el.textContent = 'Show Transcript ▼';
+  } else {
+    t.classList.add('show');
+    el.textContent = 'Hide Transcript ▲';
+  }
+}
+</script>
+
+<!-- ── MULTIMEDIA ── -->
+<section id="multimedia">
+  <p class="section-label">Multimedia</p>
+  <h2 class="section-title">Photos, Videos &amp; More</h2>
+  
+  <div class="media-grid">
+    <div class="media-thumb equal-height">
+      <div class="media-thumb">
+       <video src="video/A1.mp4" controls style="width:436px; height:430px;"></video>
+      </div>
+      <div class="media-meta">
+        </div>
+    </div>
+
+    
+<div class="media-card">
+      <div class="media-thumb equal-height">
+        <img src="image/judelyn2.jpg" img style="width:auto; height:auto; max-width:436px; max-height:500px;">
+      </div>
+      <div class="media-meta">
+        <h5><center>Mam Judelyn Maragañas Botin</center>	</h5>
+        </div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-thumb equal-height">
+        <img src="image/infographic.png" img style="width:auto; height:auto; max-width:436px; max-height:530px;">
+      </div> 
+    </div>
+  </div>
+</section>
+
+<!-- ── CONCLUSION ── -->
+<section id="conclusion">
+  <p class="section-label" style="justify-content:center;display:flex;">Closing</p>
+  <blockquote class="conclusion-quote">
+    "Women deserve the freedom to choose their own timeline."
+  </blockquote>
+  <p class="conclusion-sub">
+    Career-driven women should be celebrated for their achievements, respected for their choices,
+    and never defined by the absence of a ring. This story is a call for understanding and a
+    reminder that success looks different for everyone.
+  </p>
+</section>
+
+<!-- ── CREDITS ── -->
+<footer id="credits">
+  <div class="credits-grid">
+    <div class="credits-col">
+      <h4>Story By</h4>
+      <ul>
+        <li>Mariane Mendizabal</li>
+		<li>Leonardo B. Azarcon III</li>
+		<li>Phoebe Grace Bautista</li>
+      </ul>
+    </div>
+    <div class="credits-col">
+      <h4>Interview Subject</h4>
+      <p>Mam Judelyn Maragañas Botin, LPT<br>
+      DepEd Teacher<br>
+      MA Guidance and Counselling<br>
+      BS Education, <em>Cum Laude</em></p>
+    </div>
+    <div class="credits-col">
+      <h4>Course Details</h4>
+      <p>MO-SS086 Gender and Society<br>
+      Group 4 · Section S2102<br>
+      Terminal Assessment</p>
+    </div>
+  </div>
+  <p class="credits-bottom">
+    All content is created for academic purposes only. Interview subject's participation is
+    voluntary and appreciated. © Group 4 · S2102 · Gender and Society
+  </p>
+</footer>
+
+</body>
+</html>
